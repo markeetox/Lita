@@ -4021,19 +4021,7 @@ input, select, textarea {
   --marquee-items: 8;
 }
 
-.marquee--3 {
-  --marquee-item-width: 150px;
-  --marquee-item-height: 150px;
-  --marquee-duration: 24s;
-  --marquee-items: 3;
-}
 
-.marquee--6 {
-  --marquee-item-width: 166px;
-  --marquee-item-height: 100px;
-  --marquee-duration: 32s;
-  --marquee-items: 6;
-}
 
 .marquee__item {
   --marquee-item-offset: max(
