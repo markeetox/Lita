@@ -4015,8 +4015,8 @@ input, select, textarea {
 }
 
 .marquee--8 {
-  --marquee-item-width: 100px;
-  --marquee-item-height: 100px;
+  --marquee-item-width: 300px;
+  --marquee-item-height: 250px;
   --marquee-duration: 36s;
   --marquee-items: 8;
 }
