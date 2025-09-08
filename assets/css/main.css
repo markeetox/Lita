@@ -2604,7 +2604,7 @@ input, select, textarea {
 
 			.features li:before {
 				display: block;
-				color: #00ffcc;
+				color: #f0a4f7;
 				position: absolute;
 				left: 1.75em;
 				top: 2.75em;
@@ -2980,7 +2980,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style3 {
-			background-color: #505393;
+			background-color: #715093;
 			color: #d3d4e4;
 		}
 
