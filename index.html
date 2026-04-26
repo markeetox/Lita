@@ -1,170 +1,1191 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>LITA</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		    <link rel="icon" type="image/png" href="images/favico.png">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LITA — Latin International Talent Agency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple: #7B4FBF;
+    --purple-light: #9B6FDF;
+    --purple-pale: #C4A8F0;
+    --purple-dark: #5A3490;
+    --black: #080810;
+    --dark: #0E0E18;
+    --dark2: #161624;
+    --dark3: #1E1E2E;
+    --white: #F5F4FA;
+    --gray: #7A7A9A;
+    --gray-light: #ADADC8;
+    --font: 'Raleway', sans-serif;
+  }
 
-	</head>
-	<body class="landing is-preload">
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font);
+    font-weight: 300;
+    overflow-x: hidden;
+  }
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html"><img src="assets/css/images/logo.png"></a></h1>
-						<nav id="nav">
-							<ul>
-								<li class="special">
-									<a href="#menu" class="menuToggle"><span></span></a>
-									<div id="menu">
-										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="#">Join us</a></li>
-											<li><a href="#">PR Request</a></li>
-											<li><a href="#">Contact Us</a></li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</nav>
-					</header>
+  /* PLACEHOLDER */
+  .ph {
+    background: var(--dark2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .ph::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(135deg, rgba(123,79,191,0.1) 0%, transparent 60%),
+      repeating-linear-gradient(45deg, transparent, transparent 24px, rgba(123,79,191,0.04) 24px, rgba(123,79,191,0.04) 25px);
+  }
+  .ph::after {
+    content: attr(data-label);
+    position: relative;
+    font-family: var(--font);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--purple-pale);
+    opacity: 0.4;
+    text-align: center;
+    padding: 10px;
+  }
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<h2><img src="assets/css/images/logo.png"></h2>
-							<p>Connecting real people of all ages, from babies to seniors,<br>with casting opportunities in commercials, print, voiceovers, and more.<br>Based in Miami, we serve clients nationwide with a personal, hands-on approach</p>
-						</div>
-						<a href="#one" class="more scrolly">Learn More</a>
-					</section>
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 28px 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.4s ease;
+  }
+  nav.scrolled {
+    background: rgba(8,8,16,0.96);
+    backdrop-filter: blur(24px);
+    padding: 18px 70px;
+    border-bottom: 1px solid rgba(123,79,191,0.2);
+  }
+  .nav-logo {
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: 0.32em;
+    color: var(--purple-light);
+    text-decoration: none;
+    line-height: 1;
+  }
+  .nav-logo span {
+    font-size: 0.54rem;
+    font-weight: 300;
+    letter-spacing: 0.35em;
+    color: var(--gray-light);
+    display: block;
+    text-transform: uppercase;
+    margin-top: 3px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 42px;
+    list-style: none;
+    align-items: center;
+  }
+  .nav-links a {
+    color: var(--gray-light);
+    text-decoration: none;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--purple-light); }
+  .nav-cta {
+    border: 1px solid var(--purple) !important;
+    color: var(--purple-light) !important;
+    padding: 10px 26px;
+    transition: all 0.3s ease !important;
+  }
+  .nav-cta:hover { background: var(--purple) !important; color: #fff !important; }
 
-				<!-- One -->
-					<section id="one" class="wrapper style1 special">
-						<div class="inner">
-							<header class="major">
-								<h2>Latin International<br />
-								Talent Agency</h2>
-								<p>LITA Agency is a hands-on agency  with 20 years of experience representing people of all ages: babies, kids, teens, adults, and seniors across modeling, acting, voiceovers, and extras.
-.</p>
-							</header>
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .hamburger span {
+    display: block;
+    width: 26px; height: 1.5px;
+    background: var(--purple-light);
+    transition: all 0.3s;
+  }
 
+  /* MOBILE NAV */
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(8,8,16,0.99);
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.3s;
+  }
+  .mobile-nav a:hover { color: var(--purple-light); }
+  .mobile-nav-close {
+    position: absolute;
+    top: 28px; right: 28px;
+    background: none; border: none;
+    color: var(--purple-light);
+    font-size: 1.8rem;
+    cursor: pointer;
+    font-family: var(--font);
+  }
 
+  /* HERO */
+  #hero {
+    height: 100vh;
+    min-height: 720px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 65% 45%, rgba(123,79,191,0.14) 0%, transparent 55%),
+      radial-gradient(ellipse at 15% 75%, rgba(123,79,191,0.07) 0%, transparent 50%),
+      linear-gradient(135deg, #080810 0%, #0F0C1A 100%);
+  }
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(123,79,191,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(123,79,191,0.05) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse at 55% 40%, black 30%, transparent 70%);
+  }
+  .hero-images {
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 46%;
+    overflow: hidden;
+  }
+  .hero-images-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 100%;
+    gap: 3px;
+  }
+  .hero-img { overflow: hidden; }
+  .hero-img.ph { width: 100%; height: 100%; }
+  .hero-img:nth-child(1) { grid-row: 1 / 3; }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, var(--black) 12%, transparent 55%);
+    z-index: 1;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 70px;
+    max-width: 960px;
+  }
+  .hero-tag {
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.48em;
+    text-transform: uppercase;
+    color: var(--purple-light);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.3s forwards;
+  }
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 44px; height: 1px;
+    background: var(--purple);
+  }
+  .hero-headline {
+    font-size: clamp(5rem, 11vw, 12rem);
+    font-weight: 900;
+    line-height: 0.87;
+    letter-spacing: -0.03em;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.5s forwards;
+  }
+  .hero-headline .thin {
+    font-weight: 100;
+    color: var(--purple-pale);
+    display: block;
+    font-style: italic;
+    letter-spacing: -0.02em;
+  }
+  .hero-headline .accent { color: var(--purple-light); }
+  .hero-sub {
+    font-size: clamp(0.85rem, 1.4vw, 1rem);
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--gray-light);
+    max-width: 500px;
+    margin: 34px 0 54px;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.7s forwards;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.9s forwards;
+  }
 
+  .btn-primary {
+    background: var(--purple);
+    color: #fff;
+    border: none;
+    padding: 17px 46px;
+    font-family: var(--font);
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--purple-light); transform: translateY(-2px); }
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.22);
+    padding: 17px 46px;
+    font-family: var(--font);
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--purple-light); color: var(--purple-light); }
 
-<div class="marquee marquee--8">
-  <img class="marquee__item" src="images/netflix.png" width="300" height="250" alt="">
-  <img class="marquee__item" src="images/nickelodeon.png" width="300" height="250" alt="">
-  <img class="marquee__item" src="images/fisherprice.png" width="300" height="250" alt="">
-  <img class="marquee__item" src="images/televisa.png" width="300" height="250" alt="">
-  <img class="marquee__item" src="images/target (1).png" width="300" height="250" alt="">
-  <img class="marquee__item" src="images/toyota.png" width="300" height="250" alt="">
-  <img class="marquee__item" src="images/univision.png" width="300" height="250" alt="">
-  <img class="marquee__item" src="images/oxiclean.png" width="300" height="250" alt="">
+  .hero-scroll {
+    position: absolute;
+    bottom: 40px; left: 70px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.52rem;
+    font-weight: 700;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: var(--gray);
+    opacity: 0;
+    animation: fadeUp 1s ease 1.2s forwards;
+  }
+  .scroll-line {
+    width: 1px; height: 60px;
+    background: linear-gradient(to bottom, var(--purple), transparent);
+    animation: scrollPulse 2s ease infinite;
+  }
+  @keyframes scrollPulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
 
+  /* MARQUEE */
+  .marquee-section {
+    background: var(--purple);
+    padding: 18px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-track {
+    display: inline-flex;
+    animation: marquee 28s linear infinite;
+  }
+  .marquee-item {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.88);
+    padding: 0 36px;
+  }
+  .marquee-dot { color: rgba(255,255,255,0.3); font-size: 0.38rem; vertical-align: middle; }
+  @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  /* SECTION BASE */
+  section { padding: 130px 70px; }
+  .section-label {
+    font-size: 0.52rem;
+    font-weight: 800;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--purple-light);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 32px; height: 2px;
+    background: var(--purple);
+  }
+  .section-heading {
+    font-size: clamp(3.5rem, 7vw, 7rem);
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+  }
+  .section-heading em { font-style: italic; font-weight: 100; color: var(--purple-pale); }
+  .section-heading strong { color: var(--purple-light); font-weight: 900; }
+
+  /* ABOUT */
+  #about { background: var(--dark); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+    align-items: center;
+    max-width: 1360px;
+    margin: 0 auto;
+  }
+  .about-images { position: relative; height: 620px; }
+  .about-img-main { position: absolute; top: 0; left: 0; width: 72%; height: 82%; }
+  .about-img-accent {
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 56%; height: 56%;
+    border: 4px solid var(--dark);
+  }
+  .about-badge {
+    position: absolute;
+    top: 50%; left: 58%;
+    transform: translate(-50%,-50%);
+    width: 124px; height: 124px;
+    background: var(--purple);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 0 50px rgba(123,79,191,0.5);
+  }
+  .about-badge .num { font-size: 2.8rem; font-weight: 900; color: #fff; line-height: 1; }
+  .about-badge .lbl { font-size: 0.48rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.65); text-align: center; }
+  .about-text p { font-size: 0.9rem; font-weight: 300; line-height: 1.95; color: var(--gray-light); margin-bottom: 18px; }
+  .about-text p strong { color: var(--white); font-weight: 700; }
+  .divider { width: 60px; height: 2px; background: var(--purple); margin: 34px 0; }
+
+  /* SERVICES */
+  #services { background: var(--black); }
+  .services-inner { max-width: 1360px; margin: 0 auto; }
+  .services-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: end;
+    margin-bottom: 70px;
+  }
+  .services-desc { font-size: 0.88rem; font-weight: 300; line-height: 1.9; color: var(--gray-light); align-self: end; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    max-width: 1360px;
+    margin: 0 auto;
+  }
+  .service-card {
+    background: var(--dark2);
+    padding: 52px 40px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 2px;
+    background: var(--purple);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-card:hover { background: var(--dark3); transform: translateY(-5px); }
+  .service-num { font-size: 5.5rem; font-weight: 900; color: rgba(123,79,191,0.07); line-height: 1; margin-bottom: 18px; transition: color 0.4s; }
+  .service-card:hover .service-num { color: rgba(123,79,191,0.18); }
+  .service-title { font-size: 1.3rem; font-weight: 800; margin-bottom: 14px; color: var(--white); letter-spacing: -0.01em; }
+  .service-desc { font-size: 0.77rem; font-weight: 300; line-height: 1.85; color: var(--gray); }
+
+  /* WHY */
+  #why { background: var(--dark); }
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+    align-items: center;
+    max-width: 1360px;
+    margin: 0 auto;
+  }
+  .why-points { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 50px; }
+  .why-point {
+    background: var(--dark2);
+    padding: 30px 26px;
+    border-left: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+  .why-point:hover { border-left-color: var(--purple); background: var(--dark3); }
+  .why-point-icon { font-size: 1.5rem; margin-bottom: 12px; }
+  .why-point-title { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; margin-bottom: 8px; color: var(--white); text-transform: uppercase; }
+  .why-point-desc { font-size: 0.73rem; font-weight: 300; line-height: 1.78; color: var(--gray); }
+  .why-image { position: relative; height: 680px; }
+  .why-image-overlay {
+    position: absolute;
+    bottom: 30px; left: -30px;
+    background: var(--purple);
+    padding: 32px 38px;
+    max-width: 275px;
+    box-shadow: 0 20px 60px rgba(123,79,191,0.45);
+  }
+  .why-stat { font-size: 3.5rem; font-weight: 900; color: #fff; line-height: 1; }
+  .why-stat-label { font-size: 0.55rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-top: 8px; }
+
+  /* TALENT */
+  #talent { background: var(--black); }
+  .talent-inner { max-width: 1360px; margin: 0 auto; }
+  .talent-top { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; margin-bottom: 60px; }
+  .talent-categories { display: grid; grid-template-columns: repeat(6, 1fr); gap: 2px; }
+  .talent-cat { position: relative; height: 340px; overflow: hidden; cursor: pointer; }
+  .talent-cat-ph { width: 100%; height: 100%; transition: transform 0.5s ease; }
+  .talent-cat:hover .talent-cat-ph { transform: scale(1.04); }
+  .talent-cat-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(8,8,16,0.92) 30%, rgba(8,8,16,0.08) 80%);
+    display: flex;
+    align-items: flex-end;
+    padding: 22px 16px;
+    z-index: 2;
+    transition: background 0.3s;
+  }
+  .talent-cat:hover .talent-cat-overlay { background: linear-gradient(to top, rgba(8,8,16,0.95) 40%, rgba(123,79,191,0.15) 100%); }
+  .talent-cat-name { font-size: 1rem; font-weight: 800; color: var(--white); }
+  .talent-cat-sub { font-size: 0.52rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--purple-light); margin-top: 4px; }
+
+  /* PROCESS */
+  #process { background: var(--dark); }
+  .process-inner { max-width: 1360px; margin: 0 auto; }
+  .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 70px; }
+  .process-step {
+    background: var(--dark2);
+    padding: 52px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .process-step:hover { background: var(--dark3); }
+  .process-step::after {
+    content: '';
+    position: absolute;
+    top: 52px; right: -1px;
+    width: 1px; height: 44px;
+    background: var(--purple);
+  }
+  .process-step:last-child::after { display: none; }
+  .step-num { font-size: 6rem; font-weight: 900; color: rgba(123,79,191,0.07); line-height: 1; margin-bottom: 22px; }
+  .step-title { font-size: 1.15rem; font-weight: 800; margin-bottom: 14px; color: var(--white); }
+  .step-desc { font-size: 0.75rem; font-weight: 300; line-height: 1.85; color: var(--gray); }
+
+  /* BRANDS */
+  #brands { background: var(--black); padding: 100px 70px; }
+  .brands-inner { max-width: 1360px; margin: 0 auto; }
+  .brands-top { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 60px; flex-wrap: wrap; gap: 24px; }
+  .brands-sub { font-size: 0.82rem; font-weight: 300; color: var(--gray); max-width: 300px; line-height: 1.85; }
+  .brands-carousel-wrapper { overflow: hidden; position: relative; }
+  .brands-carousel-wrapper::before,
+  .brands-carousel-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .brands-carousel-wrapper::before { left: 0; background: linear-gradient(to right, var(--black), transparent); }
+  .brands-carousel-wrapper::after { right: 0; background: linear-gradient(to left, var(--black), transparent); }
+  .brands-track { display: flex; animation: brandScroll 32s linear infinite; }
+  .brands-track:hover { animation-play-state: paused; }
+  .brand-item {
+    flex-shrink: 0;
+    width: 220px; height: 100px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(255,255,255,0.05);
+    margin-right: 2px;
+    transition: all 0.3s ease;
+    background: var(--dark2);
+  }
+  .brand-item:hover { border-color: rgba(123,79,191,0.4); background: var(--dark3); }
+  .brand-name { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray); transition: color 0.3s; text-align: center; padding: 0 14px; }
+  .brand-item:hover .brand-name { color: var(--purple-light); }
+  @keyframes brandScroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  /* TESTIMONIALS */
+  #testimonials { background: var(--dark); padding: 130px 70px; }
+  .testimonials-inner { max-width: 1360px; margin: 0 auto; }
+  .testimonials-header { margin-bottom: 70px; }
+  .testimonial-slider { overflow: hidden; }
+  .testimonial-track { display: flex; transition: transform 0.6s cubic-bezier(0.4,0,0.2,1); }
+  .testimonial-slide { min-width: 100%; display: grid; grid-template-columns: 1fr 2fr; gap: 70px; align-items: center; }
+  .testimonial-avatar { position: relative; }
+  .testimonial-avatar::after {
+    content: '"';
+    position: absolute;
+    top: -30px; right: -30px;
+    font-size: 10rem;
+    font-weight: 900;
+    color: var(--purple);
+    line-height: 1;
+    opacity: 0.25;
+  }
+  .testimonial-quote { font-size: clamp(1.15rem, 2vw, 1.7rem); font-weight: 200; font-style: italic; line-height: 1.55; color: var(--white); margin-bottom: 32px; letter-spacing: -0.01em; }
+  .testimonial-author { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.28em; text-transform: uppercase; color: var(--purple-light); }
+  .testimonial-role { font-size: 0.65rem; font-weight: 300; color: var(--gray); margin-top: 6px; }
+  .slider-controls { display: flex; gap: 10px; margin-top: 50px; align-items: center; }
+  .slider-btn {
+    width: 50px; height: 50px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: transparent;
+    color: var(--white);
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    font-family: var(--font);
+    transition: all 0.3s;
+  }
+  .slider-btn:hover { border-color: var(--purple); color: var(--purple-light); }
+  .slider-dots { display: flex; gap: 8px; align-items: center; margin-left: 18px; }
+  .dot { width: 6px; height: 6px; background: var(--gray); border-radius: 50%; cursor: pointer; transition: all 0.3s; }
+  .dot.active { background: var(--purple-light); width: 28px; border-radius: 3px; }
+
+  /* PR */
+  #pr { background: var(--purple-dark); padding: 110px 70px; position: relative; overflow: hidden; }
+  #pr::before {
+    content: 'PR';
+    position: absolute;
+    right: -20px; top: -70px;
+    font-size: 30rem;
+    font-weight: 900;
+    color: rgba(0,0,0,0.1);
+    line-height: 1;
+    pointer-events: none;
+    letter-spacing: -0.05em;
+  }
+  .pr-inner { max-width: 1360px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center; }
+  .pr-tag {
+    font-size: 0.52rem; font-weight: 800; letter-spacing: 0.48em; text-transform: uppercase;
+    color: rgba(255,255,255,0.45); margin-bottom: 20px; display: flex; align-items: center; gap: 14px;
+  }
+  .pr-tag::before { content: ''; display: block; width: 30px; height: 2px; background: rgba(255,255,255,0.3); }
+  .pr-heading { font-size: clamp(3rem, 5.5vw, 5.5rem); font-weight: 900; color: #fff; line-height: 0.92; letter-spacing: -0.03em; margin-bottom: 28px; }
+  .pr-heading span { font-weight: 100; font-style: italic; display: block; }
+  .pr-text { font-size: 0.87rem; font-weight: 300; line-height: 1.9; color: rgba(255,255,255,0.72); margin-bottom: 28px; }
+  .btn-dark {
+    background: var(--black); color: var(--purple-light); border: none;
+    padding: 17px 46px; font-family: var(--font); font-size: 0.62rem; font-weight: 800;
+    letter-spacing: 0.32em; text-transform: uppercase; text-decoration: none;
+    cursor: pointer; transition: all 0.3s ease; display: inline-block;
+  }
+  .btn-dark:hover { background: var(--dark3); }
+  .pr-brands { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .pr-brand { background: rgba(0,0,0,0.2); padding: 32px 26px; border-left: 3px solid rgba(255,255,255,0.14); transition: all 0.3s; }
+  .pr-brand:hover { background: rgba(0,0,0,0.3); border-left-color: rgba(255,255,255,0.5); }
+  .pr-brand-name { font-size: 1.1rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
+  .pr-brand-desc { font-size: 0.68rem; font-weight: 300; color: rgba(255,255,255,0.47); letter-spacing: 0.06em; }
+
+  /* CONTACT */
+  #contact { background: var(--black); }
+  .contact-inner { max-width: 1360px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; }
+  .contact-info p { font-size: 0.88rem; font-weight: 300; line-height: 1.9; color: var(--gray-light); margin-top: 26px; margin-bottom: 44px; }
+  .contact-details { display: flex; flex-direction: column; gap: 22px; }
+  .contact-item { display: flex; gap: 16px; align-items: flex-start; }
+  .contact-item-icon { width: 40px; height: 40px; border: 1px solid rgba(123,79,191,0.35); display: flex; align-items: center; justify-content: center; color: var(--purple-light); font-size: 0.9rem; flex-shrink: 0; }
+  .contact-item-label { font-size: 0.52rem; font-weight: 800; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gray); margin-bottom: 5px; }
+  .contact-item-text { font-size: 0.8rem; font-weight: 300; color: var(--gray-light); line-height: 1.7; }
+  .contact-form { display: flex; flex-direction: column; gap: 2px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .form-field { display: flex; flex-direction: column; }
+  .form-field label { font-size: 0.52rem; font-weight: 800; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gray); padding: 16px 20px 0; background: var(--dark2); }
+  .form-field input, .form-field select, .form-field textarea {
+    background: var(--dark2); border: none; border-bottom: 1px solid transparent;
+    color: var(--white); font-family: var(--font); font-size: 0.84rem; font-weight: 300;
+    padding: 8px 20px 16px; outline: none; transition: border-color 0.3s; resize: none; -webkit-appearance: none;
+  }
+  .form-field select option { background: var(--dark2); }
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-bottom-color: var(--purple); }
+  .form-submit {
+    background: var(--purple); color: #fff; border: none; padding: 22px;
+    font-family: var(--font); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.32em;
+    text-transform: uppercase; cursor: pointer; transition: all 0.3s; margin-top: 2px;
+  }
+  .form-submit:hover { background: var(--purple-light); }
+
+  /* FOOTER */
+  footer { background: var(--dark); border-top: 1px solid rgba(123,79,191,0.15); padding: 70px 70px 44px; }
+  .footer-inner { max-width: 1360px; margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+  .footer-logo { font-size: 3rem; font-weight: 900; letter-spacing: 0.32em; color: var(--purple-light); margin-bottom: 18px; }
+  .footer-tagline { font-size: 0.78rem; font-weight: 300; line-height: 1.85; color: var(--gray); max-width: 270px; }
+  .footer-col-title { font-size: 0.52rem; font-weight: 800; letter-spacing: 0.38em; text-transform: uppercase; color: var(--purple-light); margin-bottom: 22px; }
+  .footer-col-links { display: flex; flex-direction: column; gap: 12px; }
+  .footer-col-links a { font-size: 0.78rem; font-weight: 300; color: var(--gray); text-decoration: none; transition: color 0.3s; }
+  .footer-col-links a:hover { color: var(--purple-light); }
+  .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.05); flex-wrap: wrap; gap: 16px; }
+  .footer-copy { font-size: 0.65rem; font-weight: 300; color: var(--gray); letter-spacing: 0.08em; }
+  .footer-social { display: flex; gap: 12px; }
+  .social-link { width: 38px; height: 38px; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; color: var(--gray); text-decoration: none; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.04em; transition: all 0.3s; }
+  .social-link:hover { border-color: var(--purple); color: var(--purple-light); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp { from{opacity:0;transform:translateY(32px)} to{opacity:1;transform:translateY(0)} }
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 1100px) {
+    nav, nav.scrolled { padding: 22px 36px; }
+    section { padding: 90px 36px; }
+    #brands, #testimonials, #pr, footer { padding: 90px 36px; }
+    .hero-content { padding: 0 36px; }
+    .hero-scroll { left: 36px; }
+    .hero-images { width: 42%; }
+    .about-grid, .why-grid, .contact-inner, .pr-inner { grid-template-columns: 1fr; gap: 50px; }
+    .about-images, .why-image { height: 420px; }
+    .services-top { grid-template-columns: 1fr; gap: 28px; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .process-steps { grid-template-columns: 1fr 1fr; }
+    .talent-categories { grid-template-columns: repeat(3, 1fr); }
+    .talent-top { grid-template-columns: 1fr; gap: 28px; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .why-image-overlay { left: 0; }
+  }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .hero-images { display: none; }
+    .hero-content { padding: 0 20px; }
+    section { padding: 70px 20px; }
+    #brands, #testimonials, #pr { padding: 70px 20px; }
+    footer { padding: 60px 20px 36px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr; }
+    .talent-categories { grid-template-columns: repeat(2, 1fr); }
+    .talent-cat { height: 200px; }
+    .testimonial-slide { grid-template-columns: 1fr; }
+    .testimonial-avatar { display: none; }
+    .footer-top { grid-template-columns: 1fr; }
+    .why-points { grid-template-columns: 1fr; }
+    .pr-brands { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    #pr::before { font-size: 10rem; }
+    .brands-carousel-wrapper::before,
+    .brands-carousel-wrapper::after { width: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileClose">✕</button>
+  <a href="#about" onclick="document.getElementById('mobileNav').classList.remove('open')">About</a>
+  <a href="#services" onclick="document.getElementById('mobileNav').classList.remove('open')">Services</a>
+  <a href="#talent" onclick="document.getElementById('mobileNav').classList.remove('open')">Talent</a>
+  <a href="#brands" onclick="document.getElementById('mobileNav').classList.remove('open')">Brands</a>
+  <a href="#contact" onclick="document.getElementById('mobileNav').classList.remove('open')">Contact</a>
 </div>
 
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">LITA<span>Latin International Talent Agency</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#talent">Talent</a></li>
+    <li><a href="#brands">Brands</a></li>
+    <li><a href="#pr">PR</a></li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
 
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-images">
+    <div class="hero-overlay"></div>
+    <div class="hero-images-inner">
+      <div class="hero-img ph" data-label="Talent Photo" style="width:100%;height:100%;"></div>
+      <div class="hero-img ph" data-label="Talent Photo" style="width:100%;height:100%;"></div>
+      <div class="hero-img ph" data-label="Talent Photo" style="width:100%;height:100%;"></div>
+    </div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-tag">Miami, FL — Est. 2005</div>
+    <h1 class="hero-headline">
+      Real<br>
+      <span class="accent">People.</span><br>
+      <span class="thin">Real Talent.</span>
+    </h1>
+    <p class="hero-sub">Connecting people of all ages — from babies to seniors — with casting opportunities in commercials, print, voiceovers, and more. Based in Miami, serving clients nationwide.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Become a Talent</a>
+      <a href="#about" class="btn-outline">Our Story</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div>Scroll</div>
+</section>
 
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">Commercials <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Print Modeling <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Voiceovers <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Acting <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Extras <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">PR Campaigns <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Castings <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Self-Tape Coaching <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Commercials <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Print Modeling <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Voiceovers <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Acting <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Extras <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">PR Campaigns <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Castings <span class="marquee-dot">◆</span></span>
+    <span class="marquee-item">Self-Tape Coaching <span class="marquee-dot">◆</span></span>
+  </div>
+</div>
 
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-images reveal">
+      <div class="about-img-main ph" data-label="Agency Photo" style="width:72%;height:82%;"></div>
+      <div class="about-img-accent ph" data-label="Team Photo" style="width:56%;height:56%;position:absolute;bottom:0;right:0;border:4px solid var(--dark);"></div>
+      <div class="about-badge"><span class="num">20</span><span class="lbl">Years<br>Experience</span></div>
+    </div>
+    <div class="about-text reveal">
+      <div class="section-label">Our Story</div>
+      <h2 class="section-heading">Hands&#8209;on.<br><em>Heart&#8209;first.</em></h2>
+      <div class="divider"></div>
+      <p>LITA Agency is a <strong>family-built, hands-on agency</strong> with over 20 years of experience representing people of all ages — babies, kids, teens, adults, and seniors — across modeling, acting, voiceovers, and extras.</p>
+      <p>What sets us apart is simple: <strong>we don't just submit and forget.</strong> We guide every talent through the entire process, from coaching self-tapes to polishing submissions, giving each person the best possible chance to shine.</p>
+      <p>We are honest, transparent, and deeply involved at every step — because your success is our success.</p>
+      <a href="#contact" class="btn-primary" style="margin-top:18px;">Join Our Roster</a>
+    </div>
+  </div>
+</section>
 
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-inner">
+    <div class="services-top">
+      <div>
+        <div class="section-label reveal">What We Do</div>
+        <h2 class="section-heading reveal">Our<br><strong>Services</strong></h2>
+      </div>
+      <p class="services-desc reveal">From castings to campaigns, we offer a complete suite of representation and strategic services that help talent grow — and help brands find exactly who they're looking for.</p>
+    </div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal"><div class="service-num">01</div><div class="service-title">Commercial Castings</div><p class="service-desc">We connect talent with national and regional commercial campaigns for TV, digital, and streaming platforms. From big brands to indie productions, we've got you covered.</p></div>
+    <div class="service-card reveal"><div class="service-num">02</div><div class="service-title">Print & Digital</div><p class="service-desc">Catalog, editorial, social media, and advertising — we match real, authentic faces with brands seeking genuine representation in their visual campaigns.</p></div>
+    <div class="service-card reveal"><div class="service-num">03</div><div class="service-title">Voiceover Work</div><p class="service-desc">Our voice talent roster spans a wide range of accents, tones, and languages. We place talent in audio commercials, e-learning, animation, and more.</p></div>
+    <div class="service-card reveal"><div class="service-num">04</div><div class="service-title">Acting & Extras</div><p class="service-desc">Background roles to speaking parts — we represent talent for film, TV, and streaming productions across Florida and nationwide.</p></div>
+    <div class="service-card reveal"><div class="service-num">05</div><div class="service-title">Self-Tape Coaching</div><p class="service-desc">We actively direct, review, and refine your audition tapes before submission — because quality control is the difference between a callback and a pass.</p></div>
+    <div class="service-card reveal"><div class="service-num">06</div><div class="service-title">Public Relations</div><p class="service-desc">Strategic PR campaigns for brands and individuals. Media visibility, press outreach, and communication strategy — with the same hands-on care we apply to talent.</p></div>
+  </div>
+</section>
 
-						</div>
-					</section>
+<!-- WHY -->
+<section id="why">
+  <div class="why-grid">
+    <div>
+      <div class="section-label reveal">Why LITA</div>
+      <h2 class="section-heading reveal">What makes<br><strong>us different</strong></h2>
+      <div class="why-points reveal">
+        <div class="why-point"><div class="why-point-icon">⭐</div><div class="why-point-title">Proven Experience</div><p class="why-point-desc">20+ years building trusted relationships with casting directors and major brands.</p></div>
+        <div class="why-point"><div class="why-point-icon">🤝</div><div class="why-point-title">Personalized Support</div><p class="why-point-desc">We guide every talent from self-tape prep to final submission — no one is left behind.</p></div>
+        <div class="why-point"><div class="why-point-icon">✓</div><div class="why-point-title">Quality Control</div><p class="why-point-desc">We edit, advise, and refine every audition to give our talent the best chance possible.</p></div>
+        <div class="why-point"><div class="why-point-icon">🌎</div><div class="why-point-title">Diverse Roster</div><p class="why-point-desc">Real people of all ages and backgrounds — reflecting the diversity brands actually need.</p></div>
+        <div class="why-point"><div class="why-point-icon">📡</div><div class="why-point-title">Nationwide Reach</div><p class="why-point-desc">Based in Miami, connected across the U.S. — local commercials to national campaigns.</p></div>
+        <div class="why-point"><div class="why-point-icon">🚀</div><div class="why-point-title">Beyond Castings</div><p class="why-point-desc">PR strategy, campaign outreach, and growth opportunities beyond representation.</p></div>
+      </div>
+    </div>
+    <div class="why-image reveal">
+      <div class="ph" style="width:100%;height:100%;" data-label="Talent Photo"></div>
+      <div class="why-image-overlay"><div class="why-stat">500+</div><div class="why-stat-label">Talents Represented</div></div>
+    </div>
+  </div>
+</section>
 
-				<!-- Two -->
-					<section id="two" class="wrapper alt style2">
-						<section class="spotlight">
-							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
-								<h2>What makes us different?</h2>
-								<p>We are honest, transparent, and deeply involved at every step. We don’t just “submit and forget.”  We guide our talent through the process, direct them on self-tapes, help polish videos, and support them every step of the way to bring out their best.
-</p>
-							</div>
-						</section>
-			
-					</section>
+<!-- TALENT -->
+<section id="talent">
+  <div class="talent-inner">
+    <div class="talent-top">
+      <div>
+        <div class="section-label reveal">Our Roster</div>
+        <h2 class="section-heading reveal">Talent for<br><strong>Every Story</strong></h2>
+      </div>
+      <p class="services-desc reveal">We represent real people from every walk of life. Casting directors come to us because our roster reflects the authentic diversity the modern audience connects with.</p>
+    </div>
+    <div class="talent-categories reveal">
+      <div class="talent-cat">
+        <div class="talent-cat-ph ph" style="width:100%;height:100%;" data-label="Babies 0–2"></div>
+        <div class="talent-cat-overlay"><div><div class="talent-cat-name">Babies</div><div class="talent-cat-sub">0 – 2 yrs</div></div></div>
+      </div>
+      <div class="talent-cat">
+        <div class="talent-cat-ph ph" style="width:100%;height:100%;" data-label="Kids 3–12"></div>
+        <div class="talent-cat-overlay"><div><div class="talent-cat-name">Kids</div><div class="talent-cat-sub">3 – 12 yrs</div></div></div>
+      </div>
+      <div class="talent-cat">
+        <div class="talent-cat-ph ph" style="width:100%;height:100%;" data-label="Teens 13–17"></div>
+        <div class="talent-cat-overlay"><div><div class="talent-cat-name">Teens</div><div class="talent-cat-sub">13 – 17 yrs</div></div></div>
+      </div>
+      <div class="talent-cat">
+        <div class="talent-cat-ph ph" style="width:100%;height:100%;" data-label="Adults 18–55"></div>
+        <div class="talent-cat-overlay"><div><div class="talent-cat-name">Adults</div><div class="talent-cat-sub">18 – 55 yrs</div></div></div>
+      </div>
+      <div class="talent-cat">
+        <div class="talent-cat-ph ph" style="width:100%;height:100%;" data-label="Seniors 55+"></div>
+        <div class="talent-cat-overlay"><div><div class="talent-cat-name">Seniors</div><div class="talent-cat-sub">55+ yrs</div></div></div>
+      </div>
+      <div class="talent-cat">
+        <div class="talent-cat-ph ph" style="width:100%;height:100%;" data-label="Voice Talent"></div>
+        <div class="talent-cat-overlay"><div><div class="talent-cat-name">Voice</div><div class="talent-cat-sub">All Ages</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-				<!-- Three -->
-					<section id="three" class="wrapper style3 special">
-						<div class="inner">
-							<header class="major">
-								<h2>In addition to talent representation, LITA also offers select public relations services.</h2>
-								<p> We have led PR campaigns for well-known brands and individuals such as Fisher-Price, TOMY International, and Robin Arzón. Whether it’s media visibility, strategic communication, or campaign outreach,
-									we apply the same care and attention to every story we help tell.
-</p>
-							</header>
-							<ul class="features">
-								<li class="icon fa-star">
-									<h3>Proven Experience</h3>
-									<p>With over 20 years in the industry, we’ve built trusted relationships with casting directors and major brands.</p>
-								</li>
-								<li class="icon solid fa-user">
-									<h3>Personalized Support</h3>
-									<p>We guide our talent through every casting call, from preparing the self-tape to final submissions.</p>
-								</li>
-								<li class="icon solid fa-check">
-									<h3>Quality Control</h3>
-									<p>We don’t just pass along auditions. We edit and offer feedback to give our actors the best chance possible.
-</p>
-								</li>
-								<li class="icon solid fa-list">
-									<h3>Diverse Talent</h3>
-									<p>Our roster reflects the real people casting directors are looking for.</p>
-								</li>
-								<li class="icon fa-circle">
-									<h3>Nationwide Reach</h3>
-									<p>Based in Miami but connected across the U.S., we work on projects ranging from local commercials to national campaigns.</p>
-								</li>
-								<li class="icon fa-heart">
-									<h3>Beyond Representation</h3>
-									<p>From castings to PR campaigns, we offer strategic guidance and opportunities that help our talent grow.</p>
-								</li>
-							</ul>
-						</div>
-					</section>
+<!-- PROCESS -->
+<section id="process">
+  <div class="process-inner">
+    <div class="section-label reveal">How It Works</div>
+    <h2 class="section-heading reveal">From Application<br><em>to Opportunity</em></h2>
+    <div class="process-steps">
+      <div class="process-step reveal"><div class="step-num">01</div><div class="step-title">Apply & Submit</div><p class="step-desc">Reach out with your photos and basic info. No professional portfolio required — we work with beginners and veterans alike.</p></div>
+      <div class="process-step reveal"><div class="step-num">02</div><div class="step-title">Review & Onboard</div><p class="step-desc">Our team personally reviews every application. If it's a fit, we onboard you and match your profile with relevant casting needs.</p></div>
+      <div class="process-step reveal"><div class="step-num">03</div><div class="step-title">Casting Calls</div><p class="step-desc">When an opportunity matches, we send the brief, coach your self-tape, review your submission, and polish it before it goes out.</p></div>
+      <div class="process-step reveal"><div class="step-num">04</div><div class="step-title">Booked & Supported</div><p class="step-desc">When you book a job, we're with you from contract to set. We celebrate your wins and keep building your career from there.</p></div>
+    </div>
+  </div>
+</section>
 
-				<!-- CTA -->
-					<section id="cta" class="wrapper style4">
-						<div class="inner">
-							<header>
-								<h2>Get in Touch</h2>
-								<p>Have a question, casting need, or want to collaborate?<br>
-We’d love to hear from you.
-</p>
-							</header>
-							<ul class="actions stacked">
-								<li><a href="#" class="button fit primary">Become a talent</a></li>
-								<li><a href="#" class="button fit">Learn More</a></li>
-							</ul>
-						</div>
-					</section>
+<!-- BRANDS -->
+<section id="brands">
+  <div class="brands-inner">
+    <div class="brands-top">
+      <div>
+        <div class="section-label reveal">Trusted By</div>
+        <h2 class="section-heading reveal" style="font-size:clamp(2.8rem,5.5vw,5.5rem);">Brands We've<br><strong>Worked With</strong></h2>
+      </div>
+      <p class="brands-sub reveal">From Fortune 500 companies to independent productions, our talent has appeared in campaigns for some of the most recognized brands in the world.</p>
+    </div>
+    <div class="brands-carousel-wrapper reveal">
+      <div class="brands-track">
+        <div class="brand-item"><span class="brand-name">Fisher-Price</span></div>
+        <div class="brand-item"><span class="brand-name">TOMY International</span></div>
+        <div class="brand-item"><span class="brand-name">Robin Arzón</span></div>
+        <div class="brand-item"><span class="brand-name">Telemundo</span></div>
+        <div class="brand-item"><span class="brand-name">Univision</span></div>
+        <div class="brand-item"><span class="brand-name">McDonald's</span></div>
+        <div class="brand-item"><span class="brand-name">Walmart</span></div>
+        <div class="brand-item"><span class="brand-name">Target</span></div>
+        <div class="brand-item"><span class="brand-name">Johnson & Johnson</span></div>
+        <div class="brand-item"><span class="brand-name">Carnival Cruise</span></div>
+        <div class="brand-item"><span class="brand-name">BankUnited</span></div>
+        <div class="brand-item"><span class="brand-name">Nickelodeon</span></div>
+        <div class="brand-item"><span class="brand-name">Fisher-Price</span></div>
+        <div class="brand-item"><span class="brand-name">TOMY International</span></div>
+        <div class="brand-item"><span class="brand-name">Robin Arzón</span></div>
+        <div class="brand-item"><span class="brand-name">Telemundo</span></div>
+        <div class="brand-item"><span class="brand-name">Univision</span></div>
+        <div class="brand-item"><span class="brand-name">McDonald's</span></div>
+        <div class="brand-item"><span class="brand-name">Walmart</span></div>
+        <div class="brand-item"><span class="brand-name">Target</span></div>
+        <div class="brand-item"><span class="brand-name">Johnson & Johnson</span></div>
+        <div class="brand-item"><span class="brand-name">Carnival Cruise</span></div>
+        <div class="brand-item"><span class="brand-name">BankUnited</span></div>
+        <div class="brand-item"><span class="brand-name">Nickelodeon</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="icons">
-							<li><a href="https://www.facebook.com/litaagency/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="https://instagram.com/lita_agency" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
-						<ul class="copyright">
-							<li>&copy; LITA</li>
-						</ul>
-					</footer>
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="testimonials-inner">
+    <div class="testimonials-header">
+      <div class="section-label reveal">Testimonials</div>
+      <h2 class="section-heading reveal">What Our<br><em>Talents Say</em></h2>
+    </div>
+    <div class="testimonial-slider reveal">
+      <div class="testimonial-track" id="testimonialTrack">
+        <div class="testimonial-slide">
+          <div class="testimonial-avatar"><div class="ph" style="width:100%;height:400px;" data-label="Talent Photo"></div></div>
+          <div class="testimonial-content">
+            <p class="testimonial-quote">"LITA didn't just submit my headshot and forget about me. They coached me through my audition tape, gave me real feedback, and within two months I had booked my first commercial. This agency genuinely cares."</p>
+            <div class="testimonial-author">Maria C.</div>
+            <div class="testimonial-role">Commercial Talent · Miami, FL</div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-avatar"><div class="ph" style="width:100%;height:400px;" data-label="Talent Photo"></div></div>
+          <div class="testimonial-content">
+            <p class="testimonial-quote">"As someone with no prior experience, I was nervous. The LITA team made the entire process feel manageable. They directed my self-tape, edited the video, and submitted it. I booked the job. I couldn't believe it."</p>
+            <div class="testimonial-author">James R.</div>
+            <div class="testimonial-role">Print & Commercial · Orlando, FL</div>
+          </div>
+        </div>
+        <div class="testimonial-slide">
+          <div class="testimonial-avatar"><div class="ph" style="width:100%;height:400px;" data-label="Talent Photo"></div></div>
+          <div class="testimonial-content">
+            <p class="testimonial-quote">"My daughter has been with LITA since she was 3. They treat her like family, communicate with us every step of the way, and have helped her book over 15 jobs. I wouldn't trust anyone else with her career."</p>
+            <div class="testimonial-author">Sofia M.</div>
+            <div class="testimonial-role">Parent of Child Talent · Miami, FL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slider-controls">
+      <button class="slider-btn" id="prevBtn">←</button>
+      <button class="slider-btn" id="nextBtn">→</button>
+      <div class="slider-dots">
+        <div class="dot active" data-index="0"></div>
+        <div class="dot" data-index="1"></div>
+        <div class="dot" data-index="2"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-			</div>
+<!-- PR -->
+<section id="pr">
+  <div class="pr-inner">
+    <div>
+      <div class="pr-tag">Beyond Representation</div>
+      <h2 class="pr-heading">Strategic<br><span>Public Relations</span></h2>
+      <p class="pr-text">In addition to talent representation, LITA offers select public relations services. We've led successful PR campaigns for well-known brands and individuals — applying the same hands-on care and attention we bring to every talent we represent.</p>
+      <p class="pr-text">Whether it's media visibility, strategic communication, or campaign outreach, we know how to make your story land.</p>
+      <a href="#contact" class="btn-dark">Explore PR Services</a>
+    </div>
+    <div class="pr-brands">
+      <div class="pr-brand"><div class="pr-brand-name">Fisher-Price</div><div class="pr-brand-desc">National PR Campaign</div></div>
+      <div class="pr-brand"><div class="pr-brand-name">TOMY International</div><div class="pr-brand-desc">Brand Strategy & Media</div></div>
+      <div class="pr-brand"><div class="pr-brand-name">Robin Arzón</div><div class="pr-brand-desc">Personal Brand PR</div></div>
+      <div class="pr-brand"><div class="pr-brand-name">Your Brand →</div><div class="pr-brand-desc">Let's build your story</div></div>
+    </div>
+  </div>
+</section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-info reveal">
+      <div class="section-label">Get in Touch</div>
+      <h2 class="section-heading">Let's Work<br><em>Together</em></h2>
+      <p>Have a casting need, want to join our talent roster, or interested in our PR services? We'd love to hear from you. Our team will be in touch within 24 hours.</p>
+      <div class="contact-details">
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div><div class="contact-item-label">Location</div><div class="contact-item-text">Miami, Florida<br>Serving clients nationwide</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">✉</div>
+          <div><div class="contact-item-label">Email</div><div class="contact-item-text">info@litaagency.com</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">🌐</div>
+          <div><div class="contact-item-label">Social</div><div class="contact-item-text">@litaagency on Instagram & Facebook</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form reveal">
+      <div class="form-row">
+        <div class="form-field"><label>First Name</label><input type="text" placeholder="Ana"></div>
+        <div class="form-field"><label>Last Name</label><input type="text" placeholder="García"></div>
+      </div>
+      <div class="form-field"><label>Email Address</label><input type="email" placeholder="you@email.com"></div>
+      <div class="form-field"><label>Phone</label><input type="tel" placeholder="+1 (305) 000-0000"></div>
+      <div class="form-field">
+        <label>I am a...</label>
+        <select>
+          <option value="">Select one</option>
+          <option>Aspiring Talent (Adult)</option>
+          <option>Parent of Child Talent</option>
+          <option>Casting Director / Producer</option>
+          <option>Brand / Advertiser</option>
+          <option>PR Inquiry</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-field"><label>Message</label><textarea rows="4" placeholder="Tell us about yourself or your project..."></textarea></div>
+      <button class="form-submit" onclick="handleSubmit(this)">Send Message →</button>
+    </div>
+  </div>
+</section>
 
-	</body>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">LITA</div>
+        <p class="footer-tagline">Latin International Talent Agency. Real people. Real opportunities. Based in Miami — connected nationwide.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigate</div>
+        <div class="footer-col-links">
+          <a href="#about">About Us</a>
+          <a href="#services">Services</a>
+          <a href="#talent">Our Talent</a>
+          <a href="#brands">Brands</a>
+          <a href="#pr">PR Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Talent Types</div>
+        <div class="footer-col-links">
+          <a href="#talent">Babies & Toddlers</a>
+          <a href="#talent">Kids</a>
+          <a href="#talent">Teens</a>
+          <a href="#talent">Adults</a>
+          <a href="#talent">Seniors</a>
+          <a href="#talent">Voice Talent</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Work With Us</div>
+        <div class="footer-col-links">
+          <a href="#contact">Become a Talent</a>
+          <a href="#contact">Hire Our Talent</a>
+          <a href="#contact">PR Services</a>
+          <a href="#contact">Casting Inquiries</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 LITA — Latin International Talent Agency. All rights reserved.</div>
+      <div class="footer-social">
+        <a href="#" class="social-link">ig</a>
+        <a href="#" class="social-link">fb</a>
+        <a href="#" class="social-link">in</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Navbar scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Mobile nav
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('mobileNav').classList.add('open');
+  });
+  document.getElementById('mobileClose').addEventListener('click', () => {
+    document.getElementById('mobileNav').classList.remove('open');
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Testimonial slider
+  let current = 0;
+  const track = document.getElementById('testimonialTrack');
+  const dots = document.querySelectorAll('.dot');
+  const slides = document.querySelectorAll('.testimonial-slide');
+
+  function goTo(index) {
+    current = (index + slides.length) % slides.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  document.getElementById('nextBtn').addEventListener('click', () => goTo(current + 1));
+  document.getElementById('prevBtn').addEventListener('click', () => goTo(current - 1));
+  dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.index)));
+  setInterval(() => goTo(current + 1), 6000);
+
+  // Form submit
+  function handleSubmit(btn) {
+    const orig = btn.textContent;
+    btn.textContent = '✓ Message Sent!';
+    btn.style.background = 'var(--dark3)';
+    btn.style.color = 'var(--purple-light)';
+    setTimeout(() => {
+      btn.textContent = orig;
+      btn.style.background = '';
+      btn.style.color = '';
+    }, 3000);
+  }
+</script>
+</body>
 </html>
